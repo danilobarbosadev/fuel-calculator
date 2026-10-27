@@ -35,7 +35,13 @@ Toda a lógica foi desenvolvida em **Kotlin**, utilizando fundamentos do Android
 
 ## 📸 Prints do aplicativo
 
-*Adicione aqui as imagens das telas do FuelCalculator.*
+<p align="center">
+  <img src="screenshots/tela_inicial.jpg" width="170">
+  <img src="screenshots/preco_combustivel.jpg" width="170">
+  <img src="screenshots/consumo_litro.jpg" width="170">
+  <img src="screenshots/distancia.jpg" width="170">
+  <img src="screenshots/resultado.jpg" width="170">
+</p>
 
 ## 🏁 Resultado final
 
