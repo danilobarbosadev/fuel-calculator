@@ -22,10 +22,10 @@ class ResultadoActivity : AppCompatActivity() {
         }
 
         //Recuperando da tela anterior
-        val valorTotal = intent.getDoubleExtra("DISTANCIA_CUSTO_TOTAL", 0.0)
-        val precoPorLitro = intent.getDoubleExtra("DISTANCIA_PRECO_LITRO", 0.0)
-        val consumoPorLitro = intent.getIntExtra("DISTANCIA_CONSUMO_LITRO", 0)
-        val distanciaTotal = intent.getIntExtra("DISTANCIA_VALOR", 0)
+        val valorTotal = intent.getDoubleExtra(EXTRA_DISTANCIA_CUSTO_TOTAL, 0.0)
+        val precoPorLitro = intent.getDoubleExtra(EXTRA_DISTANCIA_PRECO_LITRO, 0.0)
+        val consumoPorLitro = intent.getIntExtra(EXTRA_DISTANCIA_CONSUMO_LITRO, 0)
+        val distanciaTotal = intent.getIntExtra(EXTRA_DISTANCIA_VALOR, 0)
 
 
         //Recuperando a view

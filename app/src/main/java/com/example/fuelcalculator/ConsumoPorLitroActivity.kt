@@ -11,6 +11,9 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.appbar.MaterialToolbar
 
+const val EXTRA_CONSUMO_LITRO = "CONSUMO_LITRO"
+const val EXTRA_PRECO_LITRO = "PRECO_LITRO"
+
 class ConsumoPorLitroActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,15 +37,15 @@ class ConsumoPorLitroActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
 
-        val precoCombustivel = intent.getDoubleExtra("PRECO_COMBUSTIVEL", 0.0)
+        val precoCombustivel = intent.getDoubleExtra(EXTRA_PRECO_COMBUSTIVEL, 0.0)
         val edtConsumoPorLitro = findViewById<EditText>(R.id.edtConsumoPorLitro)
         val btnConsumoPorLitro = findViewById<Button>(R.id.btnConsumoLitroProximo)
 
         btnConsumoPorLitro.setOnClickListener {
             val consumoPorLitroValor = edtConsumoPorLitro.text.toString().toInt()
             val intent = Intent(this, DistanciaActivity::class.java)
-            intent.putExtra("PRECO_LITRO", precoCombustivel)
-            intent.putExtra("CONSUMO_LITRO", consumoPorLitroValor)
+            intent.putExtra(EXTRA_PRECO_LITRO, precoCombustivel)
+            intent.putExtra(EXTRA_CONSUMO_LITRO, consumoPorLitroValor)
             startActivity(intent)
         }
     }

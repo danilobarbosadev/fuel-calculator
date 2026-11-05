@@ -11,6 +11,11 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.appbar.MaterialToolbar
 
+const val EXTRA_DISTANCIA_PRECO_LITRO = "DISTANCIA_PRECO_LITRO"
+const val EXTRA_DISTANCIA_CONSUMO_LITRO = "DISTANCIA_CONSUMO_LITRO"
+const val EXTRA_DISTANCIA_VALOR = "DISTANCIA_VALOR"
+const val EXTRA_DISTANCIA_CUSTO_TOTAL = "DISTANCIA_CUSTO_TOTAL"
+
 class DistanciaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,8 +39,8 @@ class DistanciaActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
 
-        val precoCombustivel = intent.getDoubleExtra("PRECO_LITRO", 0.0)
-        val consumoPorLitro = intent.getIntExtra("CONSUMO_LITRO", 0)
+        val precoCombustivel = intent.getDoubleExtra(EXTRA_PRECO_LITRO, 0.0)
+        val consumoPorLitro = intent.getIntExtra(EXTRA_CONSUMO_LITRO, 0)
 
         val edtDistancia = findViewById<EditText>(R.id.edtDistancia)
         val btnDistanciaCalcular = findViewById<Button>(R.id.btnDistanciaCalcular)
@@ -52,10 +57,10 @@ class DistanciaActivity : AppCompatActivity() {
             val custoTotal = litrosNecessarios * precoLitro
 
             val intent = Intent(this, ResultadoActivity::class.java)
-            intent.putExtra("DISTANCIA_PRECO_LITRO", precoLitro)
-            intent.putExtra("DISTANCIA_CONSUMO_LITRO", consumo)
-            intent.putExtra("DISTANCIA_VALOR", distancia)
-            intent.putExtra("DISTANCIA_CUSTO_TOTAL", custoTotal)
+            intent.putExtra(EXTRA_DISTANCIA_PRECO_LITRO, precoLitro)
+            intent.putExtra(EXTRA_DISTANCIA_CONSUMO_LITRO, consumo)
+            intent.putExtra(EXTRA_DISTANCIA_VALOR, distancia)
+            intent.putExtra(EXTRA_DISTANCIA_CUSTO_TOTAL, custoTotal)
 
             startActivity(intent)
 

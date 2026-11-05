@@ -11,6 +11,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.appbar.MaterialToolbar
 
+const val EXTRA_PRECO_COMBUSTIVEL = "PRECO_COMBUSTIVEL"
+
 class PrecoCombustivelActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +41,7 @@ class PrecoCombustivelActivity : AppCompatActivity() {
 
             val edtPrecoCombustivelValor = edtPrecoCombustivel.text.toString().toDouble()
             val intent = Intent(this, ConsumoPorLitroActivity::class.java)
-            intent.putExtra("PRECO_COMBUSTIVEL", edtPrecoCombustivelValor)
+            intent.putExtra(EXTRA_PRECO_COMBUSTIVEL, edtPrecoCombustivelValor)
             startActivity(intent)
 
         }
